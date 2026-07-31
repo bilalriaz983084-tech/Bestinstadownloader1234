@@ -2,10 +2,8 @@
  * Downloader API Service Module
  */
 
-// Live Backend Endpoint (Vercel API)
-const API_CONFIG = {
-  endpoint: 'https://bestinstadownloader.vercel.app/api/download'
-};
+// Replace the old URL with your PythonAnywhere domain:
+const API_URL = "https://abdulmanan12345.pythonanywhere.com/api/download";
 
 async function fetchReelData(reelUrl) {
   try {
