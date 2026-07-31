@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>InstaBestDownloader - Reel & Video Downloader</title>
+  
+  <!-- Favicon -->
+  <link rel="icon" href="assets/images/favicon.ico" type="image/x-icon">
+  
+  <!-- CSS Links -->
+  <link rel="stylesheet" href="assets/css/reset.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+  <div class="container">
+    <!-- Navigation Header -->
+    <header class="header">
+      <a href="#" class="logo">
+        <img src="assets/images/logo.svg" alt="InstaBestDownloader Logo" class="logo-img" onerror="this.style.display='none'">
+        InstaBestDownloader <span class="logo-badge">PRO</span>
+      </a>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="#how-it-works">How It Works</a></li>
+          <li><a href="#features">Features</a></li>
+          <li><a href="#faq">FAQ</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- Stage 1: Hero Section -->
+    <section class="hero">
+      <h1 class="hero-title">Download Reels & Videos <span>Fast & Free</span></h1>
+      <p class="hero-subtitle">Paste any reel or video link below to download high-quality MP4 files without watermarks.</p>
+
+      <!-- Downloader Input Box -->
+      <form id="download-form" class="downloader-card">
+        <div class="input-group">
+          <input 
+            type="url" 
+            id="reel-url" 
+            placeholder="Paste link here (e.g. https://www.instagram.com/reel/...)" 
+            required 
+            autocomplete="off"
+          />
+        </div>
+        <button type="submit" id="submit-btn" class="btn-download">Download</button>
+      </form>
+
+      <!-- Status / Error Message Container -->
+      <div id="error-message" class="error-message" style="display: none;"></div>
+
+      <!-- Badges -->
+      <div class="features-badges">
+        <span class="badge">⚡ High-Speed Server</span>
+        <span class="badge">🎬 HD 1080p Quality</span>
+        <span class="badge">🔒 100% Secure & Free</span>
+      </div>
+    </section>
+
+    <!-- Stage 2: Result Card Section (Initially Hidden) -->
+    <section id="result-section" class="result-section">
+      <div class="result-card">
+        <!-- Left: Video Thumbnail Preview -->
+        <div class="thumbnail-wrapper">
+          <img src="" alt="Reel Preview" id="result-thumbnail">
+          <span class="duration-tag" id="result-duration">0:30</span>
+        </div>
+
+        <!-- Right: Video Details & Download Options -->
+        <div class="result-details">
+          <div class="author-info">
+            <span class="author-handle" id="result-author">@username</span>
+            <span class="platform-badge">Instagram</span>
+          </div>
+          <p class="result-caption" id="result-caption">
+            Video caption description will appear here...
+          </p>
+
+          <!-- Action Buttons / Quality Choices -->
+          <div class="download-options">
+            <a href="#" target="_blank" rel="noopener noreferrer" class="btn-option primary" id="download-mp4-hd">
+              <span>📹 Download HD Video (MP4)</span>
+            </a>
+            <button type="button" class="btn-option secondary" id="copy-link-btn">
+              <span>📋 Copy Direct Download Link</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Stage 3: How It Works Section -->
+    <section id="how-it-works" class="section-block">
+      <h2 class="section-title">How To Download Reels</h2>
+      <p class="section-subtitle">Get your favorite videos saved to your device in 3 quick steps.</p>
+
+      <div class="steps-grid">
+        <div class="step-card">
+          <div class="step-number">01</div>
+          <h3>Copy Reel Link</h3>
+          <p>Open Instagram, find the reel you want to save, tap share and select <strong>Copy Link</strong>.</p>
+        </div>
+
+        <div class="step-card">
+          <div class="step-number">02</div>
+          <h3>Paste the URL</h3>
+          <p>Paste the copied link into the input box above and click the <strong>Download</strong> button.</p>
+        </div>
+
+        <div class="step-card">
+          <div class="step-number">03</div>
+          <h3>Save to Device</h3>
+          <p>Select your desired quality format (MP4 or MP3) to download your video instantly.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Stage 3: Features Grid Section -->
+    <section id="features" class="section-block">
+      <h2 class="section-title">Why Choose InstaBestDownloader?</h2>
+      <p class="section-subtitle">Engineered for ultimate speed, quality, and privacy.</p>
+
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon">🚀</div>
+          <h3>Lightning Fast</h3>
+          <p>High-speed servers deliver direct download links without delay or throttle.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">✨</div>
+          <h3>Original Quality</h3>
+          <p>Download video files in full 1080p HD resolution without compression loss.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">🛡️</div>
+          <h3>No Login Required</h3>
+          <p>100% anonymous usage—no registration, passwords, or personal details needed.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">📱</div>
+          <h3>Cross-Platform</h3>
+          <p>Works seamlessly across Android, iOS, Windows, macOS, and Linux web browsers.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Stage 4: FAQ Section -->
+    <section id="faq" class="section-block">
+      <h2 class="section-title">Frequently Asked Questions</h2>
+      <p class="section-subtitle">Got questions? We've got answers.</p>
+
+      <div class="faq-accordion">
+        <details class="faq-item">
+          <summary class="faq-question">Is InstaBestDownloader free to use?</summary>
+          <div class="faq-answer">
+            <p>Yes, our service is 100% free with unlimited downloads and no hidden costs or subscriptions required.</p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary class="faq-question">Do I need to log in with my Instagram account?</summary>
+          <div class="faq-answer">
+            <p>No login or registration is required. You only need to paste the public reel link to process your download.</p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary class="faq-question">Where are downloaded videos saved on my device?</summary>
+          <div class="faq-answer">
+            <p>Downloaded files are automatically saved to your browser's default "Downloads" folder or camera roll depending on your mobile device.</p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary class="faq-question">Can I download private reels or accounts?</summary>
+          <div class="faq-answer">
+            <p>To respect creator privacy, our downloader only supports downloading content from public accounts and public posts.</p>
+          </div>
+        </details>
+      </div>
+    </section>
+
+    <!-- Stage 4: Footer -->
+    <footer class="footer">
+      <div class="footer-content">
+        <p class="footer-text">&copy; 2026 InstaBestDownloader. All rights reserved.</p>
+        <p class="footer-disclaimer">This service is for personal use only. We are not affiliated with Instagram or Meta.</p>
+      </div>
+    </footer>
+  </div>
+
+  <!-- JavaScript Links -->
+  <script src="assets/js/downloader.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

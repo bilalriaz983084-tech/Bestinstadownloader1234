@@ -1,0 +1,44 @@
+/* Modern CSS Reset */
+
+/* 1. Use a more intuitive box-sizing model */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+/* 2. Remove default margin and padding */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/* 3. Allow percentage-based heights in the application */
+html, body {
+  height: 100%;
+}
+
+/* 4. Improve media defaults and prevent overflow */
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+}
+
+/* 5. Inherit fonts for form controls */
+input, button, textarea, select {
+  font: inherit;
+}
+
+/* 6. Avoid text overflow and improve readability */
+p, h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
+}
+
+/* 7. Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul, ol {
+  list-style: none;
+}
+
+/* 8. Core body defaults */
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
