@@ -1,22 +1,34 @@
-from flask import Flask, request, jsonify
+import os
+from flask import Flask, request, jsonify, send_from_directory
 from flask_cors import CORS
 import yt_dlp
 
-app = Flask(__name__)
-# Enable CORS for all routes (allows Netlify/frontend origins)
+# Point Flask to the root directory where index.html and assets live
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
+app = Flask(__name__, 
+            static_folder=os.path.join(BASE_DIR, 'assets'),
+            static_url_path='/assets')
+
+# Enable CORS for all routes
 CORS(app)
 
+# 🌐 Serve Frontend index.html on root route
 @app.route('/', methods=['GET'])
-@app.route('/api', methods=['GET'])
 def home():
-    return jsonify({"status": "InstaBestDownloader API is online on Vercel!"})
+    return send_from_directory(BASE_DIR, 'index.html')
 
-# Accept BOTH POST (from downloader.js) and GET requests
+# 🔍 Optional API Status Route
+@app.route('/api', methods=['GET'])
+def api_status():
+    return jsonify({"status": "InstaBestDownloader API is online on PythonAnywhere!"})
+
+# ⬇️ Video Downloader Route (POST & GET)
 @app.route('/api/download', methods=['POST', 'GET'])
 def get_reel_data():
     reel_url = None
 
-    # Handle incoming URL whether sent via POST JSON or GET query parameter
+    # Handle incoming URL via POST JSON or GET query parameter
     if request.method == 'POST':
         data = request.get_json(silent=True) or {}
         reel_url = data.get('url')
